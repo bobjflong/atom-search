@@ -29,6 +29,8 @@ module.exports =
     # currently only supporting wikipedia in English
     atom.workspaceView.command 'search:wikipedia', =>
       open @getSearchUrl('wikipedia')
+    atom.workspaceView.command 'search:hoogle', =>
+      open @getSearchUrl('hoogle')
 
   baseSearchUrls:
     google: 'https://www.google.com/'
@@ -37,6 +39,7 @@ module.exports =
     github: 'https://github.com/search'
     stackoverflow: 'http://stackoverflow.com/search'
     wikipedia: 'http://en.wikipedia.org/'
+    hoogle: 'http://www.haskell.org/hoogle/'
 
   searchPrefixes:
     google: '#q='
@@ -45,6 +48,7 @@ module.exports =
     github: '?q='
     stackoverflow: '?q='
     wikipedia: 'w/index.php?search='
+    hoogle: '?hoogle='
 
   getSearchTerm: ->
     # assumes an editor is in focus
